@@ -1,0 +1,1309 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        مخطط قمع المبيعات - نحلة
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    
+<style>
+
+/* =======================================================
+   Global Document Settings
+   الإعدادات العامة للتقرير
+   ======================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    direction: rtl;
+    background: #121821;
+    color: #FFFFFF;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.report {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #121821;
+    color: #FFFFFF;
+}
+
+
+/* =======================================================
+   Cover
+   غلاف التقرير
+   ======================================================= */
+
+.cover {
+    padding: 46px 50px;
+    background: linear-gradient(
+        135deg,
+        #121821,
+        #1B2430
+    );
+    border-bottom: 6px solid #78C800;
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 190px;
+    max-height: 90px;
+    object-fit: contain;
+    background: #FFFFFF;
+    padding: 12px;
+    border-radius: 18px;
+    margin: 0 auto 22px;
+}
+
+
+/* =======================================================
+   Headings
+   العناوين
+   ======================================================= */
+
+h1 {
+    margin: 0 0 12px;
+    color: #FFFFFF;
+    font-size: 36px;
+    line-height: 1.35;
+}
+
+h2 {
+    margin-top: 36px;
+    margin-bottom: 18px;
+    padding-right: 14px;
+    border-right: 6px solid #78C800;
+    color: #78C800;
+    line-height: 1.45;
+}
+
+h3 {
+    margin-top: 26px;
+    margin-bottom: 12px;
+    color: #FF9800;
+    line-height: 1.5;
+}
+
+h4 {
+    margin-top: 22px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+
+/* =======================================================
+   Text
+   النصوص والقوائم
+   ======================================================= */
+
+p,
+li {
+    font-size: 17px;
+    line-height: 1.85;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 14px;
+}
+
+ul,
+ol {
+    padding-right: 28px;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 7px;
+}
+
+strong {
+    font-weight: 700;
+}
+
+
+/* =======================================================
+   Report Content
+   محتوى التقرير
+   ======================================================= */
+
+.content {
+    padding: 36px 45px 24px;
+}
+
+
+/* =======================================================
+   Tables
+   الجداول
+   ======================================================= */
+
+.table-wrapper {
+    width: 100%;
+    margin: 22px 0;
+    overflow-x: auto;
+    overflow-y: visible;
+}
+
+table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: auto;
+    font-size: 16px;
+}
+
+thead {
+    display: table-header-group;
+}
+
+tbody {
+    display: table-row-group;
+}
+
+tfoot {
+    display: table-footer-group;
+}
+
+tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+th {
+    padding: 12px 10px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: #78C800;
+    color: #000000;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 700;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+td {
+    padding: 12px 10px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,.07);
+    color: #FFFFFF;
+    text-align: right;
+    vertical-align: middle;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+tr:nth-child(even) td {
+    background: rgba(255,255,255,.11);
+}
+
+
+/* =======================================================
+   Score Boxes
+   صناديق التقييم
+   ======================================================= */
+
+.score,
+.score-box {
+    max-width: 380px;
+    margin: 30px auto;
+    padding: 26px;
+    border-radius: 18px;
+    background: #78C800;
+    color: #000000;
+    text-align: center;
+    font-size: 46px;
+    font-weight: bold;
+}
+
+.score-number {
+    color: #000000;
+    font-size: 58px;
+    font-weight: 700;
+}
+
+.score-label {
+    margin-top: 8px;
+    color: #000000;
+    font-size: 20px;
+}
+
+
+/* =======================================================
+   WhatsApp CTA
+   صندوق التواصل
+   ======================================================= */
+
+.cta-box {
+    margin-top: 50px;
+    padding: 30px;
+    border: 2px solid #78C800;
+    border-radius: 18px;
+    background: rgba(255,255,255,.05);
+    text-align: center;
+}
+
+.cta-box h2 {
+    margin-top: 0;
+    padding-right: 0;
+    border-right: 0;
+    text-align: center;
+}
+
+.cta-box p {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 14px 30px;
+    border-radius: 12px;
+    background: #25D366;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.whatsapp-btn:hover {
+    background: #1EBE5D;
+}
+
+
+/* =======================================================
+   Footer
+   تذييل التقرير
+   ======================================================= */
+
+.footer {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.16);
+    color: #B8C0CC;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* =======================================================
+   A4 Page Settings
+   إعداد صفحة PDF
+   ======================================================= */
+
+@page {
+    size: A4 portrait;
+    margin: 12mm 10mm 14mm;
+}
+
+
+/* =======================================================
+   Print Styles
+   تنسيقات الطباعة من Chrome إلى PDF
+   ======================================================= */
+
+@media print {
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        background: #121821 !important;
+        color: #FFFFFF !important;
+
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .report {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        background: #121821 !important;
+    }
+
+    .content {
+        padding: 9mm 8mm 8mm !important;
+        overflow: visible !important;
+    }
+
+
+    /* ===================================================
+       Cover Print Settings
+       تنسيق الغلاف في الطباعة
+       =================================================== */
+
+    .cover {
+        padding: 18mm 10mm !important;
+        background: linear-gradient(
+            135deg,
+            #121821,
+            #1B2430
+        ) !important;
+
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .logo {
+        max-width: 170px !important;
+        max-height: 72px !important;
+    }
+
+    h1 {
+        font-size: 30px !important;
+    }
+
+
+    /* ===================================================
+       Heading Page-Break Protection
+       منع ظهور عنوان القسم منفصلًا عن محتواه
+       =================================================== */
+
+    h2 {
+        font-size: 23px !important;
+
+        page-break-inside: avoid !important;
+        break-inside: avoid-page !important;
+
+        page-break-after: avoid !important;
+        break-after: avoid-page !important;
+    }
+
+    h3,
+    h4 {
+        page-break-inside: avoid !important;
+        break-inside: avoid-page !important;
+
+        page-break-after: avoid !important;
+        break-after: avoid-page !important;
+    }
+
+    /*
+    ربط العنوان بأول فقرة أو قائمة أو جدول بعده.
+    يمنع ظهور عنوان القسم وحده في نهاية الصفحة.
+    */
+
+    h2 + p,
+    h2 + ul,
+    h2 + ol,
+    h2 + .table-wrapper,
+    h2 + table,
+    h3 + p,
+    h3 + ul,
+    h3 + ol,
+    h3 + .table-wrapper,
+    h3 + table {
+        page-break-before: avoid !important;
+        break-before: avoid-page !important;
+    }
+
+    /*
+    منع انفصال الفقرة الأولى بعد عنوان القسم.
+    */
+
+    h2 + p,
+    h3 + p {
+        page-break-inside: avoid !important;
+        break-inside: avoid-page !important;
+    }
+
+
+    /* ===================================================
+       Text Print Settings
+       إعدادات النصوص في الطباعة
+       =================================================== */
+
+    p,
+    li {
+        font-size: 13.5px !important;
+        line-height: 1.7 !important;
+        orphans: 3;
+        widows: 3;
+    }
+
+
+    /* ===================================================
+       Table Print Settings
+       إعدادات الجداول في الطباعة
+       =================================================== */
+
+    /*
+    لا نمنع الجدول الطويل بالكامل من الانقسام؛
+    لأن بعض الجداول أطول من صفحة A4.
+
+    نسمح للجدول بالاستمرار في الصفحة التالية،
+    مع منع انقسام الصف الواحد وتكرار رأس الجدول.
+    */
+
+    .table-wrapper {
+        display: block !important;
+        width: 100% !important;
+        margin: 14px 0 20px !important;
+        overflow: visible !important;
+
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+    }
+
+    /*
+    إذا جاء الجدول مباشرة بعد العنوان،
+    احتفظ بالعنوان مع بداية الجدول قدر الإمكان.
+    */
+
+    h2 + .table-wrapper,
+    h3 + .table-wrapper {
+        page-break-before: avoid !important;
+        break-before: avoid-page !important;
+    }
+
+    table {
+        width: 100% !important;
+        margin: 0 !important;
+        table-layout: auto !important;
+        font-size: 12px !important;
+
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /*
+    تكرار رأس الجدول في كل صفحة جديدة.
+    */
+
+    thead {
+        display: table-header-group !important;
+    }
+
+    tbody {
+        display: table-row-group !important;
+    }
+
+    tfoot {
+        display: table-footer-group !important;
+    }
+
+    /*
+    منع انقسام الصف الواحد بين صفحتين.
+    */
+
+    tr {
+        page-break-inside: avoid !important;
+        break-inside: avoid-page !important;
+    }
+
+    th,
+    td {
+        padding: 7px 6px !important;
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+
+    /* ===================================================
+       Component Page-Break Protection
+       منع تقسيم المكونات المهمة
+       =================================================== */
+
+    .score,
+    .score-box,
+    .cta-box,
+    .footer {
+        page-break-inside: avoid !important;
+        break-inside: avoid-page !important;
+
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .score,
+    .score-box {
+        margin: 20px auto !important;
+        padding: 18px !important;
+    }
+
+    .cta-box {
+        margin-top: 28px !important;
+        padding: 22px !important;
+    }
+
+    .whatsapp-btn {
+        background: #25D366 !important;
+        color: #FFFFFF !important;
+
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+
+    /* ===================================================
+       Link Print Settings
+       منع ظهور رابط الزر كنص في PDF
+       =================================================== */
+
+    a[href]::after {
+        content: none !important;
+    }
+
+
+    /* ===================================================
+       Hidden Print Elements
+       إخفاء العناصر غير المطلوبة في PDF
+       =================================================== */
+
+    button,
+    .no-print {
+        display: none !important;
+    }
+
+
+    .start-new-page {
+    page-break-before: always !important;
+    break-before: page !important;
+
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+    <div class="report">
+
+        <div class="cover">
+
+            <img src="https://cdn.salla.sa/baXvN/STisinsbZ5w5ercQC6VqLnKKrzjubCNDydJ7Ssro.png" class="logo" alt="Store Logo">
+
+            <h1>
+                مخطط قمع المبيعات
+            </h1>
+
+            <p>
+                خطة مخصصة لتحسين رحلة العميل وزيادة مبيعات متجر نحلة
+            </p>
+
+            <p>
+                المجال: عسل
+            </p>
+
+            <p>
+                السوق المستهدف: المملكة العربية السعودية
+            </p>
+
+        </div>
+
+        <div class="content">
+
+            <h2>1. الملخص التنفيذي</h2>
+<p>من خلال مراجعة متجر "نحلة"، يظهر أن المتجر يمتلك قيمة فريدة من خلال تقديم منتجات العسل ومشتقاته بجودة عالية وضمان ذهبي، مما يعزز الثقة لدى العملاء. ومع ذلك، هناك فرصة كبيرة لتحسين رحلة الشراء من خلال تعزيز وضوح المعلومات وزيادة الثقة في مراحل اتخاذ القرار.</p>
+<p>تتركز أكبر فرصة للنمو في تحسين صفحات المنتجات لتشمل معلومات أكثر وضوحًا حول الشحن والدفع، مما يعزز ثقة العميل ويقلل من التردد في الشراء.</p>
+<p>الأولوية التنفيذية الأولى هي تحسين عرض المعلومات في صفحات المنتجات.</p>
+<p>من المتوقع أن يساهم هذا التحسين في رفع معدل التحويل وزيادة المبيعات بشكل ملحوظ.</p>
+<p><strong>الأولوية الأولى:</strong><br/>
+تحسين عرض المعلومات في صفحات المنتجات.</p>
+<p><strong>الأثر التجاري:</strong><br/>
+رفع معدل التحويل وزيادة المبيعات.</p>
+<h2>2. بطاقة التقييم التنفيذي</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>المحور</th>
+<th>التقييم التنفيذي</th>
+<th>ما يدعم التقييم</th>
+<th>فرصة التطوير</th>
+<th>الأولوية</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>وضوح قيمة المتجر</td>
+<td>قوي</td>
+<td>تقديم منتجات بجودة عالية وضمان ذهبي</td>
+<td>تعزيز الرسائل التسويقية</td>
+<td>متوسط</td>
+</tr>
+<tr>
+<td>وضوح المنتجات والعروض</td>
+<td>جيد</td>
+<td>توفر فئات واضحة للمنتجات</td>
+<td>تحسين عرض الفوائد والاستخدامات</td>
+<td>مرتفع</td>
+</tr>
+<tr>
+<td>الثقة والمصداقية</td>
+<td>قابل للتحسين</td>
+<td>وجود ضمان ذهبي</td>
+<td>إبراز التقييمات وآراء العملاء</td>
+<td>أولوية تطوير</td>
+</tr>
+<tr>
+<td>سهولة اتخاذ قرار الشراء</td>
+<td>قابل للتحسين</td>
+<td>توفر معلومات أساسية</td>
+<td>تحسين وضوح الشحن والدفع</td>
+<td>أولوية تطوير</td>
+</tr>
+<tr>
+<td>تجربة إتمام الطلب</td>
+<td>جيد</td>
+<td>عملية إتمام الطلب سلسة</td>
+<td>تحسين وضوح خيارات الدفع</td>
+<td>متوسط</td>
+</tr>
+<tr>
+<td>فرص زيادة قيمة الطلب</td>
+<td>قابل للتحسين</td>
+<td>لا توجد حزم واضحة</td>
+<td>تقديم عروض حزم ومنتجات متقاطعة</td>
+<td>مرتفع</td>
+</tr>
+<tr>
+<td>الاحتفاظ وإعادة الشراء</td>
+<td>قابل للتحسين</td>
+<td>لا توجد آلية واضحة للمتابعة</td>
+<td>بناء رسائل متابعة وإعادة طلب</td>
+<td>متوسط</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>التقييم التنفيذي العام:</strong><br/>
+المتجر جاهز للنمو مع تحسينات في وضوح المعلومات وزيادة الثقة.</p>
+<h2>3. تقييم تجربة المتجر</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>العنصر</th>
+<th>ما ظهر في المتجر</th>
+<th>التقييم الاستشاري</th>
+<th>فرصة التحسين</th>
+<th>الأثر التجاري</th>
+<th>الأولوية</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>الصفحة الرئيسية</td>
+<td>توفر معلومات عن المنتجات</td>
+<td>نقطة قوة</td>
+<td>تحسين الرسائل التسويقية</td>
+<td>زيادة الوعي بالعلامة التجارية</td>
+<td>متوسط</td>
+</tr>
+<tr>
+<td>وضوح الفئات</td>
+<td>فئات واضحة للمنتجات</td>
+<td>نقطة قوة</td>
+<td>تحسين عرض الفوائد والاستخدامات</td>
+<td>تحسين الاكتشاف</td>
+<td>مرتفع</td>
+</tr>
+<tr>
+<td>وصف المنتجات</td>
+<td>معلومات أساسية متوفرة</td>
+<td>فرصة تطوير</td>
+<td>إضافة تفاصيل الاستخدام والفوائد</td>
+<td>تحسين الثقة</td>
+<td>مرتفع</td>
+</tr>
+<tr>
+<td>صور المنتجات</td>
+<td>صور واضحة</td>
+<td>نقطة قوة</td>
+<td>تحسين جودة الصور</td>
+<td>تعزيز الثقة</td>
+<td>متوسط</td>
+</tr>
+<tr>
+<td>الأسعار والعروض</td>
+<td>أسعار واضحة</td>
+<td>معيار يوصى بتطبيقه</td>
+<td>تقديم عروض حزم</td>
+<td>زيادة قيمة الطلب</td>
+<td>مرتفع</td>
+</tr>
+<tr>
+<td>عناصر الثقة</td>
+<td>ضمان ذهبي</td>
+<td>نقطة قوة</td>
+<td>إبراز التقييمات وآراء العملاء</td>
+<td>تحسين الثقة</td>
+<td>مرتفع</td>
+</tr>
+<tr>
+<td>معلومات الشحن والتوصيل</td>
+<td>غير واضحة</td>
+<td>فرصة تطوير</td>
+<td>توضيح معلومات الشحن</td>
+<td>تحسين التحويل</td>
+<td>أولوية تطوير</td>
+</tr>
+<tr>
+<td>الاسترجاع والاستبدال</td>
+<td>سياسة واضحة</td>
+<td>نقطة قوة</td>
+<td>تحسين وضوح السياسة</td>
+<td>تعزيز الثقة</td>
+<td>متوسط</td>
+</tr>
+<tr>
+<td>وسائل الدفع</td>
+<td>غير واضحة</td>
+<td>فرصة تطوير</td>
+<td>توضيح خيارات الدفع</td>
+<td>تحسين التحويل</td>
+<td>أولوية تطوير</td>
+</tr>
+<tr>
+<td>السلة</td>
+<td>عملية سلسة</td>
+<td>نقطة قوة</td>
+<td>تحسين عرض المنتجات المتقاطعة</td>
+<td>زيادة قيمة الطلب</td>
+<td>متوسط</td>
+</tr>
+<tr>
+<td>إتمام الطلب</td>
+<td>عملية سلسة</td>
+<td>نقطة قوة</td>
+<td>تحسين وضوح خيارات الدفع</td>
+<td>تحسين التحويل</td>
+<td>متوسط</td>
+</tr>
+<tr>
+<td>WhatsApp</td>
+<td>غير مذكور</td>
+<td>لم يظهر بوضوح ضمن البيانات المتاحة</td>
+<td>فرصة اختبار</td>
+<td>تحسين التواصل</td>
+<td>منخفض</td>
+</tr>
+<tr>
+<td>فرص البيع الإضافي</td>
+<td>غير واضحة</td>
+<td>فرصة تطوير</td>
+<td>تقديم عروض منتجات متقاطعة</td>
+<td>زيادة قيمة الطلب</td>
+<td>مرتفع</td>
+</tr>
+<tr>
+<td>فرص البيع المتقاطع</td>
+<td>غير واضحة</td>
+<td>فرصة تطوير</td>
+<td>تقديم عروض حزم</td>
+<td>زيادة قيمة الطلب</td>
+<td>مرتفع</td>
+</tr>
+<tr>
+<td>الباقات والحزم</td>
+<td>غير واضحة</td>
+<td>فرصة تطوير</td>
+<td>تقديم عروض حزم</td>
+<td>زيادة قيمة الطلب</td>
+<td>مرتفع</td>
+</tr>
+<tr>
+<td>فرص إعادة الشراء</td>
+<td>غير واضحة</td>
+<td>فرصة تطوير</td>
+<td>بناء رسائل متابعة وإعادة طلب</td>
+<td>تحسين الاحتفاظ</td>
+<td>متوسط</td>
+</tr>
+</tbody>
+</table></div>
+<h2 class="start-new-page">4. خريطة رحلة العميل</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>المرحلة</th>
+<th>هدف العميل</th>
+<th>ما يحتاجه العميل</th>
+<th>فرصة التحسين</th>
+<th>الإجراء المقترح</th>
+<th>الأثر التجاري</th>
+<th>مؤشر الأداء</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>الوعي</td>
+<td>معرفة المنتجات</td>
+<td>رسائل تسويقية واضحة</td>
+<td>تحسين الرسائل التسويقية</td>
+<td>تعزيز الرسائل عبر الإعلانات</td>
+<td>زيادة الوعي</td>
+<td>معدل الزيارات</td>
+</tr>
+<tr>
+<td>زيارة المتجر</td>
+<td>استكشاف المنتجات</td>
+<td>تجربة سلسة</td>
+<td>تحسين الصفحة الرئيسية</td>
+<td>تحسين تصميم الصفحة</td>
+<td>زيادة الزيارات</td>
+<td>معدل الزيارات</td>
+</tr>
+<tr>
+<td>اكتشاف المنتجات</td>
+<td>فهم الفوائد</td>
+<td>معلومات واضحة</td>
+<td>تحسين وصف المنتجات</td>
+<td>إضافة تفاصيل الاستخدام</td>
+<td>تحسين الاكتشاف</td>
+<td>معدل الاكتشاف</td>
+</tr>
+<tr>
+<td>صفحة المنتج</td>
+<td>اتخاذ قرار الشراء</td>
+<td>معلومات ثقة</td>
+<td>تحسين عرض المعلومات</td>
+<td>توضيح الشحن والدفع</td>
+<td>تحسين التحويل</td>
+<td>معدل التحويل</td>
+</tr>
+<tr>
+<td>إضافة إلى السلة</td>
+<td>تأكيد الشراء</td>
+<td>وضوح الخيارات</td>
+<td>تحسين عرض المنتجات المتقاطعة</td>
+<td>تقديم عروض منتجات متقاطعة</td>
+<td>زيادة قيمة الطلب</td>
+<td>معدل الإضافة</td>
+</tr>
+<tr>
+<td>إتمام الطلب</td>
+<td>إتمام الشراء</td>
+<td>وضوح الدفع</td>
+<td>تحسين خيارات الدفع</td>
+<td>توضيح خيارات الدفع</td>
+<td>تحسين التحويل</td>
+<td>معدل الإتمام</td>
+</tr>
+<tr>
+<td>الشراء</td>
+<td>استلام المنتجات</td>
+<td>تجربة سلسة</td>
+<td>تحسين معلومات الشحن</td>
+<td>توضيح معلومات الشحن</td>
+<td>تحسين التحويل</td>
+<td>معدل الشراء</td>
+</tr>
+<tr>
+<td>ما بعد الشراء</td>
+<td>رضا العميل</td>
+<td>متابعة فعالة</td>
+<td>تحسين التواصل</td>
+<td>إرسال رسائل متابعة</td>
+<td>تحسين الاحتفاظ</td>
+<td>معدل الاحتفاظ</td>
+</tr>
+<tr>
+<td>إعادة الشراء</td>
+<td>تكرار الشراء</td>
+<td>عروض مخصصة</td>
+<td>تحسين العروض</td>
+<td>تقديم عروض مخصصة</td>
+<td>تحسين الاحتفاظ</td>
+<td>معدل إعادة الشراء</td>
+</tr>
+<tr>
+<td>التوصية بالمتجر</td>
+<td>مشاركة التجربة</td>
+<td>تجربة إيجابية</td>
+<td>تحسين تجربة العميل</td>
+<td>تعزيز تجربة الشراء</td>
+<td>زيادة التوصيات</td>
+<td>معدل التوصية</td>
+</tr>
+</tbody>
+</table></div>
+<h2>5. فرص زيادة المبيعات ذات الأولوية</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>فرصة النمو</th>
+<th>المرحلة</th>
+<th>لماذا تستحق الأولوية</th>
+<th>الإجراء التنفيذي</th>
+<th>الأثر المتوقع</th>
+<th>الأولوية</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>تحسين وصف المنتجات</td>
+<td>اكتشاف المنتجات</td>
+<td>لأنها تؤثر على قرار الشراء</td>
+<td>إضافة تفاصيل الاستخدام والفوائد</td>
+<td>تحسين التحويل</td>
+<td>أولوية قصوى</td>
+</tr>
+<tr>
+<td>تحسين عرض المعلومات في صفحة المنتج</td>
+<td>صفحة المنتج</td>
+<td>لأنها تؤثر على الثقة</td>
+<td>توضيح الشحن والدفع</td>
+<td>تحسين التحويل</td>
+<td>أولوية قصوى</td>
+</tr>
+<tr>
+<td>تقديم عروض حزم</td>
+<td>إضافة إلى السلة</td>
+<td>لأنها تزيد من قيمة الطلب</td>
+<td>تقديم عروض حزم</td>
+<td>زيادة قيمة الطلب</td>
+<td>مرتفع</td>
+</tr>
+</tbody>
+</table></div>
+<h2>6. مكاسب سريعة قابلة للتنفيذ</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>المكسب السريع</th>
+<th>مكان التنفيذ</th>
+<th>وقت التنفيذ</th>
+<th>الأثر المتوقع</th>
+<th>مؤشر النجاح</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>توضيح معلومات الشحن بجوار زر الشراء</td>
+<td>صفحات المنتجات</td>
+<td>خلال 24 ساعة</td>
+<td>تحسين التحويل</td>
+<td>معدل التحويل</td>
+</tr>
+<tr>
+<td>توضيح خيارات الدفع بجوار زر الشراء</td>
+<td>صفحات المنتجات</td>
+<td>خلال 3 أيام</td>
+<td>تحسين التحويل</td>
+<td>معدل التحويل</td>
+</tr>
+<tr>
+<td>تقديم عروض حزم</td>
+<td>السلة</td>
+<td>خلال أسبوع</td>
+<td>زيادة قيمة الطلب</td>
+<td>معدل الإضافة</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>أفضل مكسب سريع للبدء:</strong><br/>
+توضيح معلومات الشحن بجوار زر الشراء.</p>
+<p><strong>سبب اختياره:</strong><br/>
+لأنه تحسين سريع ومباشر يؤثر على ثقة العميل قبل اتخاذ القرار.</p>
+<h2>7. التوصيات الاستراتيجية للنمو</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>التوصية الاستراتيجية</th>
+<th>مصدر التوصية</th>
+<th>مكان التطبيق</th>
+<th>لماذا تهم المبيعات</th>
+<th>الأثر المتوقع</th>
+<th>مؤشر القياس</th>
+<th>الأولوية</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>تحسين وصف المنتجات</td>
+<td>من مراجعة المتجر</td>
+<td>صفحات المنتجات</td>
+<td>لأنها تؤثر على قرار الشراء</td>
+<td>تحسين التحويل</td>
+<td>معدل التحويل</td>
+<td>أولوية قصوى</td>
+</tr>
+<tr>
+<td>تحسين عرض المعلومات في صفحة المنتج</td>
+<td>من مراجعة المتجر</td>
+<td>صفحات المنتجات</td>
+<td>لأنها تؤثر على الثقة</td>
+<td>تحسين التحويل</td>
+<td>معدل التحويل</td>
+<td>أولوية قصوى</td>
+</tr>
+<tr>
+<td>تقديم عروض حزم</td>
+<td>من أفضل الممارسات</td>
+<td>السلة</td>
+<td>لأنها تزيد من قيمة الطلب</td>
+<td>زيادة قيمة الطلب</td>
+<td>معدل الإضافة</td>
+<td>مرتفع</td>
+</tr>
+<tr>
+<td>تحسين الرسائل التسويقية</td>
+<td>من أفضل الممارسات</td>
+<td>الإعلانات</td>
+<td>لأنها تزيد من الوعي</td>
+<td>زيادة الوعي</td>
+<td>معدل الزيارات</td>
+<td>متوسط</td>
+</tr>
+</tbody>
+</table></div>
+<h2>8. استراتيجية الاحتفاظ وإعادة الشراء</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>المرحلة الزمنية</th>
+<th>القناة</th>
+<th>شريحة العملاء</th>
+<th>الرسالة أو الإجراء</th>
+<th>الهدف التجاري</th>
+<th>مؤشر الأداء</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>بعد الشراء مباشرة</td>
+<td>WhatsApp</td>
+<td>جميع العملاء</td>
+<td>رسالة شكر وتأكيد الطلب</td>
+<td>تحسين الرضا</td>
+<td>معدل الاحتفاظ</td>
+</tr>
+<tr>
+<td>بعد أسبوعين</td>
+<td>البريد الإلكتروني</td>
+<td>العملاء الجدد</td>
+<td>عرض خاص لإعادة الشراء</td>
+<td>تحسين الاحتفاظ</td>
+<td>معدل إعادة الشراء</td>
+</tr>
+<tr>
+<td>بعد شهر</td>
+<td>الرسائل النصية</td>
+<td>العملاء النشطين</td>
+<td>تذكير بإعادة الشراء</td>
+<td>تحسين الاحتفاظ</td>
+<td>معدل إعادة الشراء</td>
+</tr>
+</tbody>
+</table></div>
+<h2>9. خارطة تنفيذ لمدة 30 يومًا</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>الأسبوع</th>
+<th>الأولوية التنفيذية</th>
+<th>المهام الرئيسية</th>
+<th>المخرج المطلوب</th>
+<th>المسؤول المقترح</th>
+<th>الأثر المتوقع</th>
+<th>مؤشر القياس</th>
+<th>قرار نهاية الأسبوع</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>الأسبوع الأول</td>
+<td>تحسين وصف المنتجات</td>
+<td>إضافة تفاصيل الاستخدام والفوائد</td>
+<td>وصف منتجات محسن</td>
+<td>مسؤول المحتوى</td>
+<td>تحسين التحويل</td>
+<td>معدل التحويل</td>
+<td>جاهز للانتقال</td>
+</tr>
+<tr>
+<td>الأسبوع الثاني</td>
+<td>تحسين عرض المعلومات في صفحة المنتج</td>
+<td>توضيح الشحن والدفع</td>
+<td>صفحات منتجات محسنة</td>
+<td>مسؤول المتجر</td>
+<td>تحسين التحويل</td>
+<td>معدل التحويل</td>
+<td>جاهز للانتقال</td>
+</tr>
+<tr>
+<td>الأسبوع الثالث</td>
+<td>تقديم عروض حزم</td>
+<td>تصميم عروض حزم</td>
+<td>عروض حزم جاهزة</td>
+<td>مسؤول التسويق</td>
+<td>زيادة قيمة الطلب</td>
+<td>معدل الإضافة</td>
+<td>جاهز للانتقال</td>
+</tr>
+<tr>
+<td>الأسبوع الرابع</td>
+<td>تحسين الرسائل التسويقية</td>
+<td>تعزيز الرسائل عبر الإعلانات</td>
+<td>رسائل تسويقية محسنة</td>
+<td>مسؤول التسويق</td>
+<td>زيادة الوعي</td>
+<td>معدل الزيارات</td>
+<td>جاهز للانتقال</td>
+</tr>
+</tbody>
+</table></div>
+<h2>10. ملخص الأولويات التنفيذية</h2>
+<h3>الأولوية الأولى</h3>
+<ul>
+<li>تحسين وصف المنتجات.</li>
+<li>لأنها تؤثر بشكل مباشر على قرار الشراء.</li>
+<li>الأثر التجاري المتوقع: تحسين التحويل.</li>
+<li>أول إجراء يجب تنفيذه: إضافة تفاصيل الاستخدام والفوائد.</li>
+</ul>
+<h3>الأولوية الثانية</h3>
+<ul>
+<li>تحسين عرض المعلومات في صفحة المنتج.</li>
+<li>لأنها تؤثر على ثقة العميل.</li>
+<li>الأثر التجاري المتوقع: تحسين التحويل.</li>
+<li>أول إجراء يجب تنفيذه: توضيح الشحن والدفع.</li>
+</ul>
+<h3>الأولوية الثالثة</h3>
+<ul>
+<li>تقديم عروض حزم.</li>
+<li>لأنها تزيد من قيمة الطلب.</li>
+<li>الأثر التجاري المتوقع: زيادة قيمة الطلب.</li>
+<li>أول إجراء يجب تنفيذه: تصميم عروض حزم.</li>
+</ul>
+<h2>لماذا يمتلك المتجر فرصة للنمو؟</h2>
+<ul>
+<li>قوة المنتج وجودة العسل المقدمة.</li>
+<li>وضوح التخصص في منتجات العسل ومشتقاته.</li>
+<li>إمكانية تعزيز الثقة والمصداقية من خلال الضمان الذهبي.</li>
+<li>وجود فرص لرفع متوسط قيمة الطلب من خلال عروض الحزم.</li>
+<li>إمكانية بناء تجربة احتفاظ وإعادة شراء من خلال رسائل متابعة فعالة.</li>
+</ul>
+<h2>لماذا يصعب تنفيذ هذه الخطة دون فريق متخصص؟</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>مجال التنفيذ</th>
+<th>لماذا يحتاج إلى خبرة متخصصة؟</th>
+<th>مخاطر التنفيذ غير المنظم</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>تحسين صفحات المنتجات</td>
+<td>يحتاج إلى خبرة في تجربة المستخدم وتحسين معدل التحويل</td>
+<td>قد يؤدي إلى تجربة مستخدم غير متناسقة</td>
+</tr>
+<tr>
+<td>تحسين معدل التحويل</td>
+<td>يحتاج إلى قراءة صحيحة للبيانات وليس الاعتماد على الانطباعات</td>
+<td>قد يؤدي إلى قرارات غير مستندة إلى بيانات</td>
+</tr>
+<tr>
+<td>إدارة الحملات الإعلانية وتحسينها</td>
+<td>يحتاج إلى تتبع دقيق واختبارات مستمرة للإعلانات والجمهور والعروض</td>
+<td>قد يؤدي إلى إنفاق غير فعال</td>
+</tr>
+<tr>
+<td>استعادة السلة المتروكة</td>
+<td>يحتاج إلى أتمتة للرسائل وربط القنوات ببيانات العملاء</td>
+<td>قد يؤدي إلى فقدان فرص البيع</td>
+</tr>
+<tr>
+<td>الاحتفاظ وإعادة الشراء</td>
+<td>يحتاج إلى تنسيق بين التسويق، والمحتوى، والتصميم، والتطوير</td>
+<td>قد يؤدي إلى فقدان العملاء</td>
+</tr>
+</tbody>
+</table></div>
+<p>لهذا السبب تعتمد المتاجر الأسرع نموًا على فريق متخصص يجمع بين التسويق، وتحسين تجربة المستخدم، ورفع معدل التحويل، وتحليل البيانات، والأتمتة؛ لضمان تنفيذ الأولويات بالترتيب الصحيح وتحويل التوصيات إلى نتائج قابلة للقياس.</p>
+<p>الخطوة التالية ليست إضافة المزيد من الأنشطة، بل ترتيب الأولويات، وتوحيد جهود التنفيذ، والبدء بالتحسينات الأعلى تأثيرًا بالترتيب الصحيح.</p>
+
+            
+    <div class="cta-box">
+
+        <h2>
+            🚀 الخطوة التالية
+        </h2>
+
+        <p>
+            إذا رغبت في مناقشة هذا التقرير أو تنفيذ خطة النمو، يسعد فريق شركة مطور بمساعدتك.
+        </p>
+
+        <a
+            class="whatsapp-btn"
+            href="https://wa.me/201095351127?text=السلام عليكم، استلمت تقرير Motawar AI Suite وأرغب في مناقشته."
+            target="_blank">
+
+            💬 تواصل عبر WhatsApp
+
+        </a>
+
+    </div>
+
+    
+
+            <div class="footer">
+                تم إعداد التقرير بواسطة Motawar Group. جميع الحقوق محفوظة © 2026
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
