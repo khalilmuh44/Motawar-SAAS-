@@ -106,6 +106,6 @@ def build_whatsapp_cta(
 # ==========================================================
 
 WHATSAPP_CTA = build_whatsapp_cta(
-    whatsapp_number="201038597840",
+    whatsapp_number="201038507840",
     sales_name=""
 )
